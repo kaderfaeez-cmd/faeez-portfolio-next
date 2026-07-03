@@ -17,8 +17,8 @@ export const profile = {
   email: "kaderfaeez@gmail.com",
   phone: "071 670 1079",
   phoneHref: "+27716701079",
-  github: "https://github.com/ST10369371",
-  githubHandle: "ST10369371",
+  github: "https://github.com/kaderfaeez-cmd",
+  githubHandle: "kaderfaeez-cmd",
   availability: "Available for opportunities",
   tagline:
     "Computer Science student and team leader engineering software at the intersection of AI, systems thinking, and design.",
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     category: "Web",
     status: "Live",
     accent: "#22d3ee",
-    repo: "https://github.com/ST10369371",
+    repo: "https://github.com/kaderfaeez-cmd",
   },
   {
     id: "stocksense",

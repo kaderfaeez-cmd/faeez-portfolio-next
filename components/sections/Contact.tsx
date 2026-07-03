@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative mx-auto max-w-6xl px-5 py-28 sm:px-8 sm:py-36">
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[var(--color-surface)] p-8 sm:p-14">
+      <div className="grad-border relative overflow-hidden rounded-[2rem] bg-[var(--color-surface)] p-8 sm:p-14">
         <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[var(--color-cyan)] opacity-20 blur-[100px]" />
         <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-[var(--color-violet)] opacity-20 blur-[100px]" />
 

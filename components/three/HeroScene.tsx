@@ -105,8 +105,9 @@ export default function HeroScene({ quality = "high" }: { quality?: "high" | "lo
       <color attach="background" args={["#050507"]} />
       <fog attach="fog" args={["#050507", 8, 18]} />
       <ambientLight intensity={0.35} />
-      <pointLight position={[4, 3, 4]} intensity={30} color="#22d3ee" />
-      <pointLight position={[-4, -2, -2]} intensity={24} color="#a855f7" />
+      <pointLight position={[4, 3, 4]} intensity={34} color="#22d3ee" />
+      <pointLight position={[-4, -2, -2]} intensity={26} color="#a855f7" />
+      <pointLight position={[0, 4, -5]} intensity={16} color="#4f7cff" />
 
       <Crystal />
       <Particles count={isLow ? 600 : 1400} />

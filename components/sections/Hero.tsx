@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { profile } from "@/lib/data";
 import { Icon } from "@/lib/icons";
 import RoleCycler from "@/components/RoleCycler";
+import Magnetic from "@/components/Magnetic";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
   ssr: false,
@@ -102,21 +103,25 @@ export default function Hero() {
           animate="show"
           className="mt-9 flex flex-wrap items-center gap-3"
         >
-          <a
-            href="#projects"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition-transform hover:scale-[1.03]"
-          >
-            View my work
-            <Icon.arrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 font-medium transition-colors hover:bg-white/5"
-          >
-            <Icon.github className="h-4 w-4" /> GitHub
-          </a>
+          <Magnetic>
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black shadow-[0_0_30px_-8px_rgba(255,255,255,0.5)]"
+            >
+              View my work
+              <Icon.arrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.2}>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 font-medium transition-colors hover:bg-white/5"
+            >
+              <Icon.github className="h-4 w-4" /> GitHub
+            </a>
+          </Magnetic>
         </motion.div>
       </div>
 

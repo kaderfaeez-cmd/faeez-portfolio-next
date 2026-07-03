@@ -53,7 +53,7 @@ export default function Projects() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               <TiltCard className="group h-full">
-                <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-[var(--color-surface)] p-6 transition-colors hover:border-white/20">
+                <div className="grad-border shine relative h-full overflow-hidden rounded-3xl bg-[var(--color-surface)] p-6">
                   {/* glow */}
                   <div
                     className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-25 blur-3xl transition-opacity group-hover:opacity-50"

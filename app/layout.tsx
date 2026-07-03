@@ -50,6 +50,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="min-h-dvh">
+        <div className="film-grain" aria-hidden="true" />
+        <div className="vignette" aria-hidden="true" />
         <Preloader />
         <SmoothScroll>
           <Navbar />

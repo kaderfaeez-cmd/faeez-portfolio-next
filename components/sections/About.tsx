@@ -44,7 +44,7 @@ export default function About() {
               <motion.div
                 key={m.label}
                 whileHover={{ y: -4 }}
-                className="glass rounded-2xl p-5"
+                className="glass grad-border rounded-2xl p-5"
               >
                 <div className="font-[family-name:var(--font-display)] text-4xl font-bold tracking-tight text-gradient">
                   <Counter value={m.value} suffix={m.suffix} />
