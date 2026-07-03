@@ -196,54 +196,88 @@ export type Project = {
   status: "Live" | "In Development" | "Concept";
   accent: string;
   repo?: string;
+  demo?: string;
 };
 
-// Mix of real (this site) and clearly-labeled concept builds aligned to Faeez's interests.
+// All real, shipped builds — pulled from github.com/kaderfaeez-cmd.
 export const projects: Project[] = [
   {
-    id: "nexus",
-    title: "Portfolio Nexus",
-    tagline: "This site.",
+    id: "aegis",
+    title: "Aegis",
+    tagline: "AI code reviewer.",
     description:
-      "A cinematic developer portfolio built with Next.js, React Three Fiber and Framer Motion — real-time 3D, scroll storytelling, and post-processing.",
-    tech: ["Next.js", "TypeScript", "React Three Fiber", "Framer Motion"],
-    category: "Web",
+      "AI-powered code review that finds bugs, security vulnerabilities and performance issues — paste code, get severity-ranked findings with fixes.",
+    tech: ["TypeScript", "Next.js", "GenAI", "Security"],
+    category: "AI",
+    status: "Live",
+    accent: "#34d399",
+    repo: "https://github.com/kaderfaeez-cmd/aegis",
+    demo: "https://aegis-green-eight.vercel.app",
+  },
+  {
+    id: "autoapply",
+    title: "AutoApply",
+    tagline: "AI career operating system.",
+    description:
+      "Live job scanning, AI-generated application kits, and a drag-and-drop pipeline that runs a job hunt like a product.",
+    tech: ["Next.js", "TypeScript", "GenAI", "Kanban"],
+    category: "AI",
     status: "Live",
     accent: "#22d3ee",
-    repo: "https://github.com/kaderfaeez-cmd",
+    repo: "https://github.com/kaderfaeez-cmd/autoapply",
+    demo: "https://autoapply-lyart.vercel.app",
+  },
+  {
+    id: "caliber",
+    title: "Caliber",
+    tagline: "Resume optimizer.",
+    description:
+      "AI resume and job-application optimizer — ATS scoring, bullet rewrites, and missing-keyword analysis against any job description.",
+    tech: ["Next.js", "TypeScript", "Claude API", "ATS"],
+    category: "AI",
+    status: "Live",
+    accent: "#a855f7",
+    repo: "https://github.com/kaderfaeez-cmd/caliber",
+    demo: "https://caliber-kappa.vercel.app",
+  },
+  {
+    id: "lumen",
+    title: "Lumen",
+    tagline: "AI writing studio.",
+    description:
+      "A dark-luxury AI writing studio that turns rough notes into polished prose — powered by the Claude API.",
+    tech: ["Next.js", "TypeScript", "Claude API", "UI/UX"],
+    category: "AI",
+    status: "Live",
+    accent: "#f59e0b",
+    repo: "https://github.com/kaderfaeez-cmd/Lumen",
+    demo: "https://lumen-lilac-seven.vercel.app",
   },
   {
     id: "stocksense",
     title: "StockSense",
     tagline: "Inventory intelligence.",
     description:
-      "A data dashboard turning retail stock and sales records into forecasts and alerts — born from real operations experience.",
-    tech: ["Next.js", "PostgreSQL", "Charts", "Data Modelling"],
+      "Retail inventory and sales dashboard — demand forecasting, reorder alerts, and analytics born from real operations experience.",
+    tech: ["Next.js", "TypeScript", "Charts", "Forecasting"],
     category: "Data",
-    status: "In Development",
-    accent: "#a855f7",
-  },
-  {
-    id: "aegis",
-    title: "Aegis",
-    tagline: "AI code reviewer.",
-    description:
-      "An LLM-assisted code-review tool that flags bugs, security smells, and style issues in pull requests.",
-    tech: ["TypeScript", "Claude API", "Node.js", "GenAI"],
-    category: "AI",
-    status: "Concept",
-    accent: "#34d399",
+    status: "Live",
+    accent: "#4f7cff",
+    repo: "https://github.com/kaderfaeez-cmd/stocksense",
+    demo: "https://stocksense-mauve.vercel.app",
   },
   {
     id: "sentinel",
     title: "Sentinel",
     tagline: "Security at a glance.",
     description:
-      "A cybersecurity monitoring dashboard visualising threat signals, auth events, and OWASP-style risk scoring.",
+      "Real-time security-operations dashboard — live threat feed, risk scoring, and auth-event monitoring.",
     tech: ["Next.js", "TypeScript", "Security", "Data Viz"],
     category: "Security",
-    status: "Concept",
+    status: "Live",
     accent: "#f43f5e",
+    repo: "https://github.com/kaderfaeez-cmd/sentinel",
+    demo: "https://sentinel-opal-pi.vercel.app",
   },
 ];
 

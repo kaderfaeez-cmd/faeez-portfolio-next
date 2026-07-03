@@ -105,16 +105,29 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {p.repo && (
-                    <a
-                      href={p.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center gap-1.5 text-sm text-[var(--color-cyan)] hover:underline"
-                    >
-                      View source <Icon.arrowUpRight className="h-3.5 w-3.5" />
-                    </a>
-                  )}
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-black transition-transform hover:scale-[1.04]"
+                        style={{ background: p.accent }}
+                      >
+                        Live demo <Icon.arrowUpRight className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+                    {p.repo && (
+                      <a
+                        href={p.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm text-[var(--color-muted)] transition-colors hover:border-white/35 hover:text-[var(--color-ink)]"
+                      >
+                        View source <Icon.github className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </TiltCard>
             </motion.div>
