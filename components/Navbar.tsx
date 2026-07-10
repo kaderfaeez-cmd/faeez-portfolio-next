@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import { profile, navLinks } from "@/lib/data";
 import { Icon } from "@/lib/icons";
@@ -9,8 +8,6 @@ import { Icon } from "@/lib/icons";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const hidden = pathname?.startsWith("/workspace") ?? false;
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.3 });
 
@@ -20,8 +17,6 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  if (hidden) return null;
 
   return (
     <>
