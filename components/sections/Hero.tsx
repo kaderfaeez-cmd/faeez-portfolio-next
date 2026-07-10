@@ -184,6 +184,28 @@ export default function Hero() {
             </a>
           </Magnetic>
         </motion.div>
+
+        {/* Enter Workspace — appears after 3s */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-6"
+        >
+          <Magnetic strength={0.25}>
+            <a
+              href="/workspace"
+              className="group inline-flex items-center gap-3 rounded-full border border-[var(--color-cyan)]/40 bg-[var(--color-cyan)]/10 px-6 py-3 font-mono text-sm uppercase tracking-[0.15em] text-[var(--color-cyan)] backdrop-blur transition-all hover:border-[var(--color-cyan)] hover:bg-[var(--color-cyan)]/20 hover:shadow-[0_0_30px_-6px_rgba(34,211,238,0.6)]"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-cyan)] opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-cyan)]" />
+              </span>
+              Enter workspace
+              <Icon.arrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Magnetic>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

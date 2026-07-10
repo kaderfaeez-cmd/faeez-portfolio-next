@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { profile } from "@/lib/data";
 
@@ -8,6 +9,8 @@ export default function Preloader() {
   const reduce = useReducedMotion();
   const [done, setDone] = useState(false);
   const [pct, setPct] = useState(0);
+  const pathname = usePathname();
+  const skip = pathname?.startsWith("/workspace") ?? false;
 
   useEffect(() => {
     if (reduce) {
@@ -26,6 +29,8 @@ export default function Preloader() {
     }, 130);
     return () => clearInterval(id);
   }, [reduce]);
+
+  if (skip) return null;
 
   return (
     <AnimatePresence>
