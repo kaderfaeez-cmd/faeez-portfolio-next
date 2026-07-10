@@ -202,6 +202,32 @@ export type Project = {
 // All real, shipped builds — pulled from github.com/kaderfaeez-cmd.
 export const projects: Project[] = [
   {
+    id: "vanta",
+    title: "Vanta",
+    tagline: "Interactive 3D firearm showcase.",
+    description:
+      "A cinematic WebGL experience — a procedural handgun that scroll-assembles part by part, with live telemetry and real-time lighting.",
+    tech: ["Next.js", "React Three Fiber", "WebGL", "TypeScript"],
+    category: "Web",
+    status: "Live",
+    accent: "#f97316",
+    repo: "https://github.com/kaderfaeez-cmd/vanta",
+    demo: "https://vanta-murex.vercel.app",
+  },
+  {
+    id: "akhals",
+    title: "Akhal's Recipes",
+    tagline: "QR spice-packet recipe platform.",
+    description:
+      "A premium recipe platform for a real spice brand — scan a QR code on any spice packet and land on its recipes, with a cinematic 3D hero and admin dashboard.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "QR"],
+    category: "Web",
+    status: "Live",
+    accent: "#eab308",
+    repo: "https://github.com/kaderfaeez-cmd/akhals-recipes",
+    demo: "https://akhalsrecipes.com",
+  },
+  {
     id: "aegis",
     title: "Aegis",
     tagline: "AI code reviewer.",
