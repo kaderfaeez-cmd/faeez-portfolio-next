@@ -1,323 +1,215 @@
-// Single source of truth for all portfolio content.
-// Parsed from Faeez Kader's CV and structured as a developer / AI / PM portfolio.
+// All site content. One file, no fluff.
 
 export const profile = {
   name: "Faeez Kader",
   firstName: "Faeez",
-  lastName: "Kader",
-  initials: "FK",
-  roles: [
-    "Software Developer",
-    "AI Engineer",
-    "Project Manager",
-    "Full-Stack Developer",
-    "Tech Creator",
-  ],
   location: "Gauteng, South Africa",
   email: "kaderfaeez@gmail.com",
   phone: "071 670 1079",
   phoneHref: "+27716701079",
   github: "https://github.com/kaderfaeez-cmd",
   githubHandle: "kaderfaeez-cmd",
-  availability: "Available for opportunities",
-  tagline:
-    "Computer Science student and team leader engineering software at the intersection of AI, systems thinking, and design.",
-  heroLine:
-    "I build intelligent, well-engineered software — bringing the operational discipline of leading real teams to the craft of code.",
-  bio: [
-    "I'm a Computer Science student at Varsity College and a hands-on team leader who came into tech through systems and operations. Before writing software full-time, I ran a retail team — owning recruitment, budgets, inventory, and the kind of standards that don't survive sloppy execution.",
-    "I now channel that same discipline into building things: full-stack web applications, generative-AI experiments, and clean, considered interfaces. I care about software engineering, AI, cybersecurity, UI/UX, and the business thinking that ties them all together.",
-  ],
+  availability: "Available for work",
+  tagline: "Software developer in Gauteng, South Africa. I build web software end-to-end and ship something every day.",
+  // hero
+  heroKicker: "Software developer — building daily",
+  heroLine: "I build web software end-to-end, and I ship something every day.",
+  heroSub: "Computer Science student. Former shop-floor manager. Eight live products in the last two months.",
 } as const;
 
-export const metrics = [
-  { value: 6, suffix: "", label: "Team led & trained" },
-  { value: 2, suffix: "+", label: "Years leading operations" },
-  { value: 4, suffix: "+", label: "Years community service" },
-  { value: 8, suffix: "", label: "Core focus areas" },
-] as const;
-
-export type SkillCategory = {
+export type CaseStudy = {
   id: string;
+  index: string;
   title: string;
-  icon: string;
-  blurb: string;
-  skills: string[];
+  year: string;
+  kind: string;
+  oneLiner: string;
+  context: string;
+  build: string;
+  result: string;
+  stack: string[];
+  live: string;
+  code: string;
+  featured: boolean;
 };
 
-export const skillCategories: SkillCategory[] = [
-  {
-    id: "frontend",
-    title: "Frontend",
-    icon: "code",
-    blurb: "Interfaces that feel fast, intentional, and alive.",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML / CSS"],
-  },
-  {
-    id: "backend",
-    title: "Backend",
-    icon: "server",
-    blurb: "Typed, structured services and clean APIs.",
-    skills: ["Java", "C#", "Kotlin", "Node.js", "REST APIs", "OOP"],
-  },
-  {
-    id: "ai",
-    title: "AI / ML",
-    icon: "sparkles",
-    blurb: "Building with LLMs and generative AI.",
-    skills: ["Generative AI", "LLM Apps", "Prompt Engineering", "Python", "Claude / OpenAI APIs"],
-  },
-  {
-    id: "security",
-    title: "Cybersecurity",
-    icon: "shield",
-    blurb: "Secure-by-default thinking.",
-    skills: ["Secure Coding", "OWASP Top 10", "Auth & Sessions", "Threat Modelling"],
-  },
-  {
-    id: "data",
-    title: "Data & Databases",
-    icon: "database",
-    blurb: "Turning records into decisions.",
-    skills: ["SQL", "PostgreSQL", "Data Modelling", "Analytics", "Data Viz"],
-  },
-  {
-    id: "cloud",
-    title: "Cloud / DevOps",
-    icon: "cloud",
-    blurb: "Ship it, version it, keep it green.",
-    skills: ["Vercel", "Git & GitHub", "CI Basics", "Edge Deploys"],
-  },
-  {
-    id: "pm",
-    title: "Project Management",
-    icon: "target",
-    blurb: "Leading people and shipping outcomes.",
-    skills: ["Team Leadership", "Agile / Ops", "Budgeting", "Stakeholder Comms"],
-  },
-  {
-    id: "design",
-    title: "UI / UX",
-    icon: "palette",
-    blurb: "Systems, motion, and the details.",
-    skills: ["Design Systems", "Interaction Design", "Prototyping", "Accessibility"],
-  },
-];
-
-export type Experience = {
-  role: string;
-  company: string;
-  badge?: string;
-  period: string;
-  summary: string;
-  points: string[];
-  tags: string[];
-};
-
-export const experience: Experience[] = [
-  {
-    role: "Computer Science Student",
-    company: "Varsity College",
-    period: "2023 — Present",
-    summary:
-      "Pursuing a Bachelor of Computer Science in Application & Web Development while building real projects on the side.",
-    points: [
-      "Studying object-oriented programming, application & web development, databases, and software design.",
-      "Building fluency across Java, C#, Kotlin and the modern web stack (React, Next.js, TypeScript).",
-      "Self-directed work in generative AI, security fundamentals, and UI/UX engineering.",
-    ],
-    tags: ["Software Engineering", "Web Development", "AI", "Databases"],
-  },
-  {
-    role: "Assistant Manager",
-    company: "Akhal's Spice and More",
-    period: "2022 — 2024",
-    summary:
-      "Led a team and ran day-to-day operations — the project-management and systems foundation behind how I build software.",
-    points: [
-      "Built and led a team of 6 — recruitment, training, and daily supervision; faster stock turnaround and fewer complaints within months.",
-      "Ran social media and marketing end-to-end, growing foot traffic and repeat customers with no agency or budget.",
-      "Re-engineered the stock process supplier-orders → returns, cutting audit inventory errors each quarter.",
-      "Owned monthly budgets and financial records, flagging inefficiencies early to keep the store profitable.",
-    ],
-    tags: ["Leadership", "Operations", "Budgeting", "Systems Thinking"],
-  },
-  {
-    role: "Volunteer",
-    company: "Amani Ink'd",
-    badge: "NPO",
-    period: "2022 — Present",
-    summary:
-      "Multi-year humanitarian volunteering — community outreach and on-the-ground assistance.",
-    points: [
-      "Supported humanitarian aid initiatives with the NPO team, helping vulnerable communities through organised outreach.",
-      "Showed up consistently across multiple years — leadership and genuine care beyond a formal work setting.",
-    ],
-    tags: ["Community", "Leadership", "Consistency"],
-  },
-];
-
-export const education = [
-  {
-    degree: "Bachelor of Computer Science",
-    field: "Application & Web Development",
-    school: "Varsity College",
-    period: "2023 — Present",
-  },
-  {
-    degree: "Certificate of Higher Education",
-    field: "Foundational Studies",
-    school: "Amity International",
-    period: "2018 — 2022",
-  },
-] as const;
-
-export type Certification = {
-  title: string;
-  issuer: string;
-  status: "In Progress" | "Pursuing";
-};
-
-// Honestly framed: focus areas Faeez is actively working toward (no fabricated credentials).
-export const certifications: Certification[] = [
-  { title: "Responsive Web Design", issuer: "freeCodeCamp", status: "In Progress" },
-  { title: "JavaScript Algorithms & Data Structures", issuer: "freeCodeCamp", status: "Pursuing" },
-  { title: "Generative AI Fundamentals", issuer: "Self-directed", status: "In Progress" },
-  { title: "Cybersecurity Essentials", issuer: "Self-directed", status: "Pursuing" },
-];
-
-export type Project = {
-  id: string;
-  title: string;
-  tagline: string;
-  description: string;
-  tech: string[];
-  category: "AI" | "Web" | "Security" | "Data";
-  status: "Live" | "In Development" | "Concept";
-  accent: string;
-  repo?: string;
-  demo?: string;
-};
-
-// All real, shipped builds — pulled from github.com/kaderfaeez-cmd.
-export const projects: Project[] = [
-  {
-    id: "vanta",
-    title: "Vanta",
-    tagline: "Interactive 3D firearm showcase.",
-    description:
-      "A cinematic WebGL experience — a procedural handgun that scroll-assembles part by part, with live telemetry and real-time lighting.",
-    tech: ["Next.js", "React Three Fiber", "WebGL", "TypeScript"],
-    category: "Web",
-    status: "Live",
-    accent: "#f97316",
-    repo: "https://github.com/kaderfaeez-cmd/vanta",
-    demo: "https://vanta-murex.vercel.app",
-  },
+export const work: CaseStudy[] = [
   {
     id: "akhals",
+    index: "01",
     title: "Akhal's Recipes",
-    tagline: "QR spice-packet recipe platform.",
-    description:
-      "A premium recipe platform for a real spice brand — scan a QR code on any spice packet and land on its recipes, with a cinematic 3D hero and admin dashboard.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "QR"],
-    category: "Web",
-    status: "Live",
-    accent: "#eab308",
-    repo: "https://github.com/kaderfaeez-cmd/akhals-recipes",
-    demo: "https://akhalsrecipes.com",
-  },
-  {
-    id: "aegis",
-    title: "Aegis",
-    tagline: "AI code reviewer.",
-    description:
-      "AI-powered code review that finds bugs, security vulnerabilities and performance issues — paste code, get severity-ranked findings with fixes.",
-    tech: ["TypeScript", "Next.js", "GenAI", "Security"],
-    category: "AI",
-    status: "Live",
-    accent: "#34d399",
-    repo: "https://github.com/kaderfaeez-cmd/aegis",
-    demo: "https://aegis-green-eight.vercel.app",
+    year: "2026",
+    kind: "Client work — real product",
+    oneLiner: "A recipe platform for a real spice brand, reached by scanning the packet.",
+    context:
+      "Akhal's Spice and More is a real shop — the one I used to help run. Customers kept asking the same question at the counter: what do I actually cook with this? The packets had no room for recipes, and a link nobody types is a link nobody visits.",
+    build:
+      "Every packet gets a QR code that lands on that spice's own recipe page. Behind it: a Next.js app with a Postgres database, an admin dashboard where the shop manages recipes without touching code, and a design that works one-handed in a kitchen. Deployed on a custom domain the brand owns.",
+    result:
+      "Live in production at akhalsrecipes.com and printed on real packaging in a real store. My first piece of software with users who don't know me.",
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Neon", "Vercel"],
+    live: "https://akhalsrecipes.com",
+    code: "https://github.com/kaderfaeez-cmd/akhals-recipes",
+    featured: true,
   },
   {
     id: "autoapply",
+    index: "02",
     title: "AutoApply",
-    tagline: "AI career operating system.",
-    description:
-      "Live job scanning, AI-generated application kits, and a drag-and-drop pipeline that runs a job hunt like a product.",
-    tech: ["Next.js", "TypeScript", "GenAI", "Kanban"],
-    category: "AI",
-    status: "Live",
-    accent: "#22d3ee",
-    repo: "https://github.com/kaderfaeez-cmd/autoapply",
-    demo: "https://autoapply-lyart.vercel.app",
+    year: "2026",
+    kind: "Product — end to end",
+    oneLiner: "A career operating system that runs a job hunt like a pipeline.",
+    context:
+      "Job hunting is a systems problem pretending to be a motivation problem. Applications get lost, follow-ups get forgotten, and every listing wants a slightly different story from the same CV.",
+    build:
+      "Live job scanning, AI-generated application kits per listing, and a drag-and-drop kanban that treats every application as a deal to close. Designed so the AI layer degrades gracefully: no API key, and it still works with template-based kits.",
+    result:
+      "Live and in daily use — starting with my own job hunt. The fallback architecture means the free deployment never breaks.",
+    stack: ["Next.js", "TypeScript", "GenAI", "Tailwind"],
+    live: "https://autoapply-lyart.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/autoapply",
+    featured: true,
+  },
+  {
+    id: "vanta",
+    index: "03",
+    title: "Vanta",
+    year: "2026",
+    kind: "Craft — real-time 3D",
+    oneLiner: "A cinematic WebGL showcase where a procedural handgun assembles as you scroll.",
+    context:
+      "I wanted to prove I could do the hard, visual end of the web: real-time 3D that feels intentional rather than decorative, tied to scroll in a way that tells a story.",
+    build:
+      "React Three Fiber scene with a fully procedural model — every part positioned in code, assembled piece by piece on scroll with live telemetry readouts. Custom lighting rig, post-processing, and a configurator for materials.",
+    result:
+      "The most technically demanding front-end I've shipped. It taught me more about performance budgets than any tutorial could.",
+    stack: ["Next.js", "React Three Fiber", "WebGL", "TypeScript"],
+    live: "https://vanta-murex.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/vanta",
+    featured: true,
+  },
+  {
+    id: "aegis",
+    index: "04",
+    title: "Aegis",
+    year: "2026",
+    kind: "Tool — AI + security",
+    oneLiner: "Paste code, get severity-ranked findings: bugs, vulnerabilities, fixes.",
+    context:
+      "Code review is where I learn fastest, so I built the reviewer I wanted: one that flags security smells and performance traps before a human ever looks.",
+    build:
+      "An analysis pipeline over a free-tier AI model with structured output — every finding gets a severity, an explanation, and a concrete fix. Built to cost nothing to run.",
+    result:
+      "Live and free to use. I run my own projects through it before shipping.",
+    stack: ["Next.js", "TypeScript", "Gemini", "Security"],
+    live: "https://aegis-green-eight.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/aegis",
+    featured: true,
   },
   {
     id: "caliber",
+    index: "05",
     title: "Caliber",
-    tagline: "Resume optimizer.",
-    description:
-      "AI resume and job-application optimizer — ATS scoring, bullet rewrites, and missing-keyword analysis against any job description.",
-    tech: ["Next.js", "TypeScript", "Claude API", "ATS"],
-    category: "AI",
-    status: "Live",
-    accent: "#a855f7",
-    repo: "https://github.com/kaderfaeez-cmd/caliber",
-    demo: "https://caliber-kappa.vercel.app",
-  },
-  {
-    id: "lumen",
-    title: "Lumen",
-    tagline: "AI writing studio.",
-    description:
-      "A dark-luxury AI writing studio that turns rough notes into polished prose — powered by the Claude API.",
-    tech: ["Next.js", "TypeScript", "Claude API", "UI/UX"],
-    category: "AI",
-    status: "Live",
-    accent: "#f59e0b",
-    repo: "https://github.com/kaderfaeez-cmd/Lumen",
-    demo: "https://lumen-lilac-seven.vercel.app",
+    year: "2026",
+    kind: "Tool — AI",
+    oneLiner: "Resume optimizer: ATS score, bullet rewrites, missing keywords.",
+    context: "",
+    build: "",
+    result: "",
+    stack: ["Next.js", "TypeScript", "Claude API"],
+    live: "https://caliber-kappa.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/caliber",
+    featured: false,
   },
   {
     id: "stocksense",
+    index: "06",
     title: "StockSense",
-    tagline: "Inventory intelligence.",
-    description:
-      "Retail inventory and sales dashboard — demand forecasting, reorder alerts, and analytics born from real operations experience.",
-    tech: ["Next.js", "TypeScript", "Charts", "Forecasting"],
-    category: "Data",
-    status: "Live",
-    accent: "#4f7cff",
-    repo: "https://github.com/kaderfaeez-cmd/stocksense",
-    demo: "https://stocksense-mauve.vercel.app",
+    year: "2026",
+    kind: "Dashboard — data",
+    oneLiner: "Inventory forecasting born from managing real stock in a real shop.",
+    context: "",
+    build: "",
+    result: "",
+    stack: ["Next.js", "TypeScript", "Charts"],
+    live: "https://stocksense-mauve.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/stocksense",
+    featured: false,
   },
   {
     id: "sentinel",
+    index: "07",
     title: "Sentinel",
-    tagline: "Security at a glance.",
-    description:
-      "Real-time security-operations dashboard — live threat feed, risk scoring, and auth-event monitoring.",
-    tech: ["Next.js", "TypeScript", "Security", "Data Viz"],
-    category: "Security",
-    status: "Live",
-    accent: "#f43f5e",
-    repo: "https://github.com/kaderfaeez-cmd/sentinel",
-    demo: "https://sentinel-opal-pi.vercel.app",
+    year: "2026",
+    kind: "Dashboard — security",
+    oneLiner: "Security operations console: live threat feed, risk scoring, auth events.",
+    context: "",
+    build: "",
+    result: "",
+    stack: ["Next.js", "TypeScript", "Data viz"],
+    live: "https://sentinel-opal-pi.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/sentinel",
+    featured: false,
+  },
+  {
+    id: "lumen",
+    index: "08",
+    title: "Lumen",
+    year: "2026",
+    kind: "Product — AI writing",
+    oneLiner: "A writing studio that turns rough notes into finished prose.",
+    context: "",
+    build: "",
+    result: "",
+    stack: ["Next.js", "TypeScript", "Claude API"],
+    live: "https://lumen-lilac-seven.vercel.app",
+    code: "https://github.com/kaderfaeez-cmd/Lumen",
+    featured: false,
   },
 ];
 
-export const projectFilters = ["All", "Web", "AI", "Data", "Security"] as const;
+export const principles = [
+  {
+    n: "01",
+    title: "Ship every day",
+    body: "Momentum beats motivation. Eight of the projects on this page went from empty repo to live URL in under two months — because a day that ends without a deploy feels unfinished to me.",
+  },
+  {
+    n: "02",
+    title: "Shop-floor standards",
+    body: "I ran a store before I wrote software. On a shop floor, if a shelf is wrong you fix it before the doors open — nobody debates it. I hold interfaces to the same standard: if it's not right, it doesn't go out.",
+  },
+  {
+    n: "03",
+    title: "Build the real thing",
+    body: "I don't do tutorial projects. Every build here solves a problem I actually had — or a real client actually had — because software with stakes teaches faster than software with instructions.",
+  },
+  {
+    n: "04",
+    title: "Design for the worst case",
+    body: "Free tiers run out. API keys go missing. Phones block autoplay. The builds I'm proudest of degrade gracefully — the AI tools here still work with no key at all.",
+  },
+];
+
+export const about = {
+  heading: "I got into software sideways.",
+  paras: [
+    "Before I wrote code, I helped run Akhal's Spice and More — a real shop with real stock, real budgets, and a team of six that I recruited and trained. Retail teaches you something no bootcamp does: everything is a system, and every broken system costs money by Friday.",
+    "That's what pulled me into Computer Science at Varsity College. Inventory counts are just state management. A sales floor is just UX with worse fonts. Once I saw it that way, I couldn't stop — so now I build web software every day and put it live, and my first real client was the shop itself.",
+    "I care about the details other people skip: how a page feels when it loads, whether the empty state makes sense, whether it still works when the API key is missing. I'm the kind of person who notices how a desk is lit.",
+    "Java, C#, and Kotlin from my degree. TypeScript, React, and Next.js from shipping. Currently studying, building daily, and open to work.",
+  ],
+  facts: [
+    ["Now", "BCompSci, Varsity College"],
+    ["Before", "Assistant manager, retail"],
+    ["Stack", "TypeScript · React · Next.js · Java · C#"],
+    ["Base", "Gauteng, South Africa"],
+  ],
+} as const;
 
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
+  { label: "How I work", href: "#thinking" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
-] as const;
-
-export const socials = [
-  { label: "GitHub", href: profile.github, icon: "github" },
-  { label: "Email", href: `mailto:${profile.email}`, icon: "mail" },
 ] as const;

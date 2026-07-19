@@ -1,50 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050507;
-  --color-bg-2: #08080c;
-  --color-surface: #0d0d13;
-  --color-border: #1a1a24;
-  --color-ink: #f4f5fa;
-  --color-muted: #9ea0b3;
-  --color-faint: #62647a;
+  /* warm paper + ink, pulled from the desk photo */
+  --color-paper: #f3eee4;
+  --color-paper-2: #ece5d6;
+  --color-ink: #211b12;
+  --color-ink-2: #4a4234;
+  --color-muted: #7b7160;
+  --color-line: #ddd3bf;
+  --color-line-strong: #c8bba0;
 
-  --color-cyan: #22d3ee;
-  --color-violet: #a855f7;
-  --color-blue: #4f7cff;
-  --color-emerald: #34d399;
+  --color-amber: #b45c14;
+  --color-amber-deep: #92450c;
+  --color-green: #55663f;
 
+  --font-serif: var(--font-serif);
   --font-sans: var(--font-body);
-  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
 
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
-  border-color: var(--color-border);
+  border-color: var(--color-line);
 }
 
 html {
-  background: var(--color-bg);
+  background: var(--color-paper);
   scroll-behavior: auto;
 }
 
 body {
-  background: var(--color-bg);
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   overflow-x: clip;
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-cyan) 30%, transparent);
-  color: #fff;
+  background: #e5cfa8;
+  color: var(--color-ink);
 }
 
 /* Lenis */
@@ -55,121 +58,43 @@ html.lenis body {
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
 
-/* ---------- Utilities ---------- */
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(110deg, #fff 10%, var(--color-cyan) 55%, var(--color-violet) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .font-display {
+    font-family: var(--font-serif), Georgia, serif;
   }
-  .text-grad-soft {
-    background: linear-gradient(110deg, var(--color-ink), var(--color-muted));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .meta {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-muted);
   }
-  .glass {
-    background: color-mix(in srgb, var(--color-surface) 70%, transparent);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid color-mix(in srgb, #fff 8%, transparent);
+  .hairline-t {
+    border-top: 1px solid var(--color-line);
   }
-  .glass-strong {
-    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
-    backdrop-filter: blur(22px) saturate(150%);
-    -webkit-backdrop-filter: blur(22px) saturate(150%);
-    border: 1px solid color-mix(in srgb, #fff 10%, transparent);
+  .hairline-b {
+    border-bottom: 1px solid var(--color-line);
   }
-  .glow-cyan {
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-cyan) 40%, transparent),
-      0 0 30px -6px color-mix(in srgb, var(--color-cyan) 60%, transparent);
+  /* underline that draws in on hover */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease-out-quart);
+    padding-bottom: 2px;
   }
-  .ring-grid {
-    background-image: linear-gradient(color-mix(in srgb, #fff 4%, transparent) 1px, transparent 1px),
-      linear-gradient(90deg, color-mix(in srgb, #fff 4%, transparent) 1px, transparent 1px);
-    background-size: 56px 56px;
+  .link-draw:hover {
+    background-size: 100% 1px;
   }
-  .hairline {
-    border-top: 1px solid color-mix(in srgb, #fff 8%, transparent);
+  /* tactile press */
+  .press {
+    transition: transform 0.15s var(--ease-out-quart);
   }
-}
-
-/* ---------- Cinematic atmosphere ---------- */
-.film-grain {
-  position: fixed;
-  inset: -50%;
-  z-index: 95;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 9s steps(10) infinite;
-}
-@keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-3%, -6%); }
-  30% { transform: translate(4%, 2%); }
-  50% { transform: translate(-4%, 7%); }
-  70% { transform: translate(6%, -3%); }
-  90% { transform: translate(-2%, 4%); }
-}
-.vignette {
-  position: fixed;
-  inset: 0;
-  z-index: 94;
-  pointer-events: none;
-  background: radial-gradient(ellipse 110% 90% at 50% 40%, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
-}
-
-/* Gradient border (premium card edge) */
-.grad-border {
-  position: relative;
-}
-.grad-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(140deg, rgba(34, 211, 238, 0.5), rgba(255, 255, 255, 0.06) 30%, rgba(255, 255, 255, 0.04) 65%, rgba(168, 85, 247, 0.45));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Shine sweep on hover */
-.shine {
-  position: relative;
-  overflow: hidden;
-}
-.shine::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -80%;
-  width: 55%;
-  transform: skewX(-18deg);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
-  transition: left 0.9s var(--ease-out-expo);
-  pointer-events: none;
-}
-.shine:hover::after {
-  left: 140%;
-}
-
-/* Hide scrollbar but keep scroll */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  .press:active {
+    transform: scale(0.98) translateY(1px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

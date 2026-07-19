@@ -1,62 +1,59 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
 import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
-import Preloader from "@/components/Preloader";
 
-const display = Space_Grotesk({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const serif = Fraunces({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  axes: ["opsz", "SOFT", "WONK"],
+  weight: "variable",
+});
 const body = Inter({ variable: "--font-body", subsets: ["latin"] });
-const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500"] });
+const mono = IBM_Plex_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500"] });
 
-const url = "https://faeez-kader.vercel.app";
+const url = "https://faeezkader.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: {
-    default: `${profile.name} — Software Developer & AI Engineer`,
+    default: `${profile.name} — Software Developer`,
     template: `%s — ${profile.name}`,
   },
   description: profile.tagline,
   keywords: [
-    "Faeez Kader", "Software Developer", "AI Engineer", "Full-Stack Developer",
-    "Project Manager", "Next.js", "React", "TypeScript", "Computer Science", "South Africa",
+    "Faeez Kader", "Software Developer", "Full-Stack Developer", "Web Developer",
+    "Next.js", "React", "TypeScript", "Computer Science", "South Africa",
   ],
   authors: [{ name: profile.name }],
   creator: profile.name,
   openGraph: {
     type: "website",
     url,
-    title: `${profile.name} — Software Developer & AI Engineer`,
+    title: `${profile.name} — Software Developer`,
     description: profile.tagline,
     siteName: profile.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — Software Developer & AI Engineer`,
+    title: `${profile.name} — Software Developer`,
     description: profile.tagline,
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050507",
+  themeColor: "#f3eee4",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={`${serif.variable} ${body.variable} ${mono.variable}`}>
       <body className="min-h-dvh">
-        <div className="film-grain" aria-hidden="true" />
-        <div className="vignette" aria-hidden="true" />
-        <Preloader />
-        <SmoothScroll>
-          <Navbar />
-          {children}
-        </SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
