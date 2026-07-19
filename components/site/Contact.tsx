@@ -18,7 +18,7 @@ export default function Contact() {
         <Reveal delay={0.1}>
           <a
             href={`mailto:${profile.email}`}
-            className="link-draw mt-12 inline-block font-display text-[clamp(1.3rem,3.4vw,2.4rem)] font-light italic text-[#e8b06b]"
+            className="link-draw mt-12 inline-block font-display text-[clamp(1.3rem,3.4vw,2.4rem)] font-light italic text-[#02c39a]"
           >
             {profile.email}
           </a>

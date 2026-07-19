@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* warm paper + ink, pulled from the desk photo */
-  --color-paper: #f3eee4;
-  --color-paper-2: #ece5d6;
-  --color-ink: #211b12;
-  --color-ink-2: #4a4234;
-  --color-muted: #7b7160;
-  --color-line: #ddd3bf;
-  --color-line-strong: #c8bba0;
+  /* ocean + lemon cream — coolors 05668d·028090·00a896·02c39a·f0f3bd */
+  --color-paper: #f0f3bd;
+  --color-paper-2: #e7ecab;
+  --color-ink: #05445e;
+  --color-ink-2: #05668d;
+  --color-muted: #45788c;
+  --color-line: #d2dba4;
+  --color-line-strong: #b9c790;
 
-  --color-amber: #b45c14;
-  --color-amber-deep: #92450c;
-  --color-green: #55663f;
+  --color-amber: #028090;
+  --color-amber-deep: #05668d;
+  --color-green: #02c39a;
+  --color-mint: #00a896;
 
   --font-serif: var(--font-serif);
   --font-sans: var(--font-body);
@@ -46,7 +47,7 @@ body {
 }
 
 ::selection {
-  background: #e5cfa8;
+  background: #9fdcc8;
   color: var(--color-ink);
 }
 
