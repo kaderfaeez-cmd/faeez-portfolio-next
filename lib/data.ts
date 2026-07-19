@@ -60,7 +60,7 @@ export const work: CaseStudy[] = [
     kind: "Product — end to end",
     oneLiner: "A career operating system that runs a job hunt like a pipeline.",
     context:
-      "Job hunting is a systems problem pretending to be a motivation problem. Applications get lost, follow-ups get forgotten, and every listing wants a slightly different story from the same CV.",
+      "Job applications get lost, follow-ups get forgotten, and every listing wants a slightly different version of the same CV. I wanted the whole process in one place.",
     build:
       "Live job scanning, AI-generated application kits per listing, and a drag-and-drop kanban that treats every application as a deal to close. Designed so the AI layer degrades gracefully: no API key, and it still works with template-based kits.",
     result:
@@ -171,33 +171,33 @@ export const work: CaseStudy[] = [
 export const principles = [
   {
     n: "01",
-    title: "Ship every day",
-    body: "Momentum beats motivation. Eight of the projects on this page went from empty repo to live URL in under two months — because a day that ends without a deploy feels unfinished to me.",
+    title: "Ship daily",
+    body: "I put something live every day. Small, frequent releases keep projects moving — every build on this page went from empty repo to live URL in weeks, not months.",
   },
   {
     n: "02",
-    title: "Shop-floor standards",
-    body: "I ran a store before I wrote software. On a shop floor, if a shelf is wrong you fix it before the doors open — nobody debates it. I hold interfaces to the same standard: if it's not right, it doesn't go out.",
+    title: "Quality is non-negotiable",
+    body: "Managing a store taught me a simple rule: if it's not right, it doesn't go out. I apply the same rule to interfaces — error states, empty states and edge cases included.",
   },
   {
     n: "03",
-    title: "Build the real thing",
-    body: "I don't do tutorial projects. Every build here solves a problem I actually had — or a real client actually had — because software with stakes teaches faster than software with instructions.",
+    title: "Real projects only",
+    body: "Everything here has real users or real stakes — a paying client, my own job hunt, a live store. That's where the actual learning is.",
   },
   {
     n: "04",
-    title: "Design for the worst case",
-    body: "Free tiers run out. API keys go missing. Phones block autoplay. The builds I'm proudest of degrade gracefully — the AI tools here still work with no key at all.",
+    title: "Plan for failure",
+    body: "Free tiers expire, API keys go missing, mobile browsers block autoplay. I build the fallback first, so nothing breaks when a dependency does.",
   },
 ];
 
 export const about = {
-  heading: "I got into software sideways.",
+  heading: "I managed a shop before I wrote software.",
   paras: [
-    "Before I wrote code, I helped run Akhal's Spice and More — a real shop with real stock, real budgets, and a team of six that I recruited and trained. Retail teaches you something no bootcamp does: everything is a system, and every broken system costs money by Friday.",
-    "That's what pulled me into Computer Science at Varsity College. Inventory counts are just state management. A sales floor is just UX with worse fonts. Once I saw it that way, I couldn't stop — so now I build web software every day and put it live, and my first real client was the shop itself.",
-    "I care about the details other people skip: how a page feels when it loads, whether the empty state makes sense, whether it still works when the API key is missing. I'm the kind of person who notices how a desk is lit.",
-    "Java, C#, and Kotlin from my degree. TypeScript, React, and Next.js from shipping. Currently studying, building daily, and open to work.",
+    "Before university I was assistant manager at Akhal's Spice and More, a family spice shop — a team of six, stock control, budgets, and the daily problems a small business throws at you.",
+    "That experience shaped how I build. Retail runs on systems — inventory, cash-up, staffing — and when one breaks, you feel it immediately. Software is the same, just faster to fix.",
+    "Now I'm studying Computer Science at Varsity College and shipping web products daily. My first client was the shop itself: a recipe platform that's now printed on their packaging in stores.",
+    "Java, C# and Kotlin from my degree. TypeScript, React and Next.js from shipping. Open to junior roles and freelance work.",
   ],
   facts: [
     ["Now", "BCompSci, Varsity College"],

@@ -117,8 +117,7 @@ export default function Hero() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
             {profile.availability}
           </span>
-          <span className="meta hidden sm:block">8 live products · 2026</span>
-          <span className="meta">Scroll</span>
+          <span className="meta">8 live products · 2026</span>
         </div>
       </div>
     </section>

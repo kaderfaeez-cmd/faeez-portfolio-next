@@ -9,16 +9,17 @@ export default function Contact() {
         <Reveal>
           <p className="meta !text-[var(--color-paper)]/50">Contact</p>
           <h2 className="font-display mt-6 text-[clamp(2.2rem,6vw,4.6rem)] font-medium leading-[1.05] tracking-[-0.015em]">
-            Building something?
-            <br />
-            <span className="text-[var(--color-paper)]/60">I answer fast.</span>
+            Get in touch.
           </h2>
+          <p className="mt-5 max-w-[44ch] text-[var(--color-paper)]/70">
+            Open to junior roles, freelance builds and collaborations.
+          </p>
         </Reveal>
 
         <Reveal delay={0.1}>
           <a
             href={`mailto:${profile.email}`}
-            className="link-draw mt-12 inline-block font-display text-[clamp(1.3rem,3.4vw,2.4rem)] font-light italic text-[#02c39a]"
+            className="link-draw mt-12 inline-block font-display text-[clamp(1.3rem,3.4vw,2.4rem)] font-light italic text-[#b3cfe5]"
           >
             {profile.email}
           </a>

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* ocean + lemon cream — coolors 05668d·028090·00a896·02c39a·f0f3bd */
-  --color-paper: #f0f3bd;
-  --color-paper-2: #e7ecab;
-  --color-ink: #05445e;
-  --color-ink-2: #05668d;
-  --color-muted: #45788c;
-  --color-line: #d2dba4;
-  --color-line-strong: #b9c790;
+  /* navy + ice — 0A1931·1A3D63·4A7FA7·B3CFE5·F6FAFD */
+  --color-paper: #f6fafd;
+  --color-paper-2: #e6eef7;
+  --color-ink: #0a1931;
+  --color-ink-2: #1a3d63;
+  --color-muted: #4a7fa7;
+  --color-line: #d8e5f0;
+  --color-line-strong: #b3cfe5;
 
-  --color-amber: #028090;
-  --color-amber-deep: #05668d;
-  --color-green: #02c39a;
-  --color-mint: #00a896;
+  --color-amber: #4a7fa7;
+  --color-amber-deep: #1a3d63;
+  --color-green: #4a7fa7;
+  --color-mint: #b3cfe5;
 
   --font-serif: var(--font-serif);
   --font-sans: var(--font-body);
@@ -47,7 +47,7 @@ body {
 }
 
 ::selection {
-  background: #9fdcc8;
+  background: #b3cfe5;
   color: var(--color-ink);
 }
 

@@ -18,12 +18,9 @@ export default function Work() {
   return (
     <section id="work" className="mx-auto max-w-[1200px] px-6 py-28 md:px-10 md:py-36">
       <Reveal>
-        <div className="flex items-end justify-between">
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-medium leading-tight tracking-[-0.01em]">
-            Selected work
-          </h2>
-          <span className="meta mb-2 hidden sm:block">Case studies, not cards</span>
-        </div>
+        <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)] font-medium leading-tight tracking-[-0.01em]">
+          Selected work
+        </h2>
       </Reveal>
 
       <div className="mt-12 border-t border-[var(--color-line-strong)]">
@@ -67,7 +64,7 @@ export default function Work() {
                           {[
                             ["The problem", p.context],
                             ["The build", p.build],
-                            ["Where it landed", p.result],
+                            ["The result", p.result],
                           ].map(([label, text]) => (
                             <div key={label}>
                               <h3 className="meta mb-2">{label}</h3>
