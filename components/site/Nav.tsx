@@ -13,6 +13,9 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Over the dark hero the nav is light; once past it, it flips to paper.
+  const light = !scrolled;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
@@ -20,18 +23,33 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-10">
-        <a href="#top" className="font-display text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+        <a
+          href="#top"
+          className={`font-display text-lg font-semibold tracking-tight transition-colors duration-300 ${
+            light ? "text-[var(--color-paper)]" : "text-[var(--color-ink)]"
+          }`}
+        >
           Faeez Kader
         </a>
         <div className="flex items-center gap-6 md:gap-8">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="link-draw hidden text-sm text-[var(--color-ink-2)] sm:inline">
+            <a
+              key={l.href}
+              href={l.href}
+              className={`link-draw hidden text-sm transition-colors duration-300 sm:inline ${
+                light ? "text-[var(--color-paper)]/80" : "text-[var(--color-ink-2)]"
+              }`}
+            >
               {l.label}
             </a>
           ))}
           <a
             href={`mailto:${profile.email}`}
-            className="press rounded-full border border-[var(--color-ink)] px-4 py-1.5 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
+            className={`press rounded-full border px-4 py-1.5 text-sm font-medium transition-colors duration-300 ${
+              light
+                ? "border-[var(--color-paper)]/60 text-[var(--color-paper)] hover:bg-[var(--color-paper)] hover:text-[var(--color-ink)]"
+                : "border-[var(--color-ink)] text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
+            }`}
           >
             Say hello
           </a>

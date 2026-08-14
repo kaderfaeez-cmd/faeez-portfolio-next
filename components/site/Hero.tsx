@@ -50,14 +50,15 @@ export default function Hero() {
           // eslint-disable-next-line @next/next/no-img-element
           <img src="/hero/hero-poster.jpg" alt="" className="h-full w-full object-cover" />
         )}
-        {/* paper wash so the type owns the frame */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-paper)]/92 via-[var(--color-paper)]/55 to-[var(--color-paper)]" />
+        {/* Legibility only — a soft scrim under the text column, image stays visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)]/85 via-[var(--color-ink)]/45 to-[var(--color-ink)]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/70 via-transparent to-[var(--color-ink)]/35" />
       </div>
 
       {/* content */}
       <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center px-6 pt-24 md:px-10">
         <motion.p
-          className="meta"
+          className="meta !text-[var(--color-paper)]/55"
           initial={reduce ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
@@ -66,17 +67,17 @@ export default function Hero() {
         </motion.p>
 
         <motion.h1
-          className="font-display mt-6 max-w-[16ch] text-[clamp(2.6rem,7.2vw,5.6rem)] font-medium leading-[1.04] tracking-[-0.015em] text-[var(--color-ink)]"
+          className="font-display mt-6 max-w-[16ch] text-[clamp(2.6rem,7.2vw,5.6rem)] font-medium leading-[1.04] tracking-[-0.015em] text-[var(--color-paper)]"
           initial={reduce ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
         >
           I build web software end-to-end — and ship something{" "}
-          <em className="font-light italic text-[var(--color-amber)]">every day</em>.
+          <em className="font-light italic text-[#b3cfe5]">every day</em>.
         </motion.h1>
 
         <motion.p
-          className="mt-7 max-w-[52ch] text-lg leading-relaxed text-[var(--color-ink-2)]"
+          className="mt-7 max-w-[52ch] text-lg leading-relaxed text-[var(--color-paper)]/75"
           initial={reduce ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 1, 0.5, 1] }}
@@ -92,18 +93,18 @@ export default function Hero() {
         >
           <a
             href="#work"
-            className="press rounded-full bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] transition-colors hover:bg-[var(--color-ink-2)]"
+            className="press rounded-full bg-[var(--color-paper)] px-6 py-3 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[#b3cfe5]"
           >
             Selected work ↓
           </a>
-          <a href="/Faeez-Kader-CV.pdf" download className="link-draw text-sm font-medium text-[var(--color-ink)]">
+          <a href="/Faeez-Kader-CV.pdf" download className="link-draw text-sm font-medium text-[var(--color-paper)]">
             Download CV
           </a>
           <a
             href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="link-draw text-sm font-medium text-[var(--color-ink)]"
+            className="link-draw text-sm font-medium text-[var(--color-paper)]"
           >
             GitHub ↗
           </a>
@@ -112,12 +113,12 @@ export default function Hero() {
 
       {/* bottom meta strip */}
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pb-8 md:px-10">
-        <div className="hairline-t flex items-center justify-between pt-5">
-          <span className="meta flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
+        <div className="flex items-center justify-between border-t border-[var(--color-paper)]/20 pt-5">
+          <span className="meta !text-[var(--color-paper)]/60 flex items-center gap-2">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#b3cfe5]" />
             {profile.availability}
           </span>
-          <span className="meta">8 live products · 2026</span>
+          <span className="meta !text-[var(--color-paper)]/45">12 live products · 2026</span>
         </div>
       </div>
     </section>

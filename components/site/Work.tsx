@@ -118,7 +118,7 @@ export default function Work() {
           {rest.map((p) => (
             <a
               key={p.id}
-              href={p.live}
+              href={p.live || p.code}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-baseline justify-between gap-4 border-b border-[var(--color-line)] py-4"
@@ -129,7 +129,9 @@ export default function Work() {
                 </span>
                 <span className="ml-3 hidden text-sm text-[var(--color-muted)] md:inline">{p.oneLiner}</span>
               </span>
-              <span className="meta shrink-0 transition-transform duration-300 group-hover:translate-x-1">↗</span>
+              <span className="meta shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                {p.live ? "↗" : "Code ↗"}
+              </span>
             </a>
           ))}
         </div>
