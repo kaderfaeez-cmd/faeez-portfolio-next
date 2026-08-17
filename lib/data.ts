@@ -14,7 +14,7 @@ export const profile = {
   // hero
   heroKicker: "Software developer — building daily",
   heroLine: "I build web software end-to-end, and I ship something every day.",
-  heroSub: "Computer Science student. Former shop-floor manager. Twelve products live, built in the last few months.",
+  heroSub: "Computer Science graduate. Former shop-floor manager. Twelve products live, built in the last few months.",
 } as const;
 
 export type CaseStudy = {
@@ -274,11 +274,11 @@ export const about = {
   paras: [
     "Before university I was assistant manager at Akhal's Spice and More, a family spice shop — a team of six, stock control, budgets, and the daily problems a small business throws at you.",
     "That experience shaped how I build. Retail runs on systems — inventory, cash-up, staffing — and when one breaks, you feel it immediately. Software is the same, just faster to fix.",
-    "Now I'm studying Computer Science at Varsity College and shipping web products daily. My first client was the shop itself: a recipe platform that's now printed on their packaging in stores.",
-    "Java, C# and Kotlin from my degree. TypeScript, React and Next.js from shipping. Open to junior roles and freelance work.",
+    "I've since finished my Computer Science degree at Varsity College, and I ship web products daily. My first client was the shop itself: a recipe platform that's now printed on their packaging in stores.",
+    "Java, C# and Kotlin from my degree. TypeScript, React and Next.js from shipping. Open to graduate and junior developer roles, and to freelance work.",
   ],
   facts: [
-    ["Now", "BCompSci, Varsity College"],
+    ["Degree", "BCompSci — Varsity College"],
     ["Before", "Assistant manager, retail"],
     ["Stack", "TypeScript · React · Next.js · Java · C#"],
     ["Base", "Gauteng, South Africa"],

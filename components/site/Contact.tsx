@@ -12,7 +12,7 @@ export default function Contact() {
             Get in touch.
           </h2>
           <p className="mt-5 max-w-[44ch] text-[var(--color-paper)]/70">
-            Open to junior roles, freelance builds and collaborations.
+            Open to graduate and junior developer roles, freelance builds and collaborations.
           </p>
         </Reveal>
 
